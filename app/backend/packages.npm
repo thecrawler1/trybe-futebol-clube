@@ -1,1 +1,4 @@
-chai-as-promised, @types/chai-as-promised, http-status-codes, express-async-errors
+chai-as-promised
+@types/chai-as-promised
+http-status-codes
+express-async-errors
