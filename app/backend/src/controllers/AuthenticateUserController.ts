@@ -4,7 +4,7 @@ import IResponse from './interfaces/IResponse';
 import IAuthenticateUserService from '../services/interfaces/IAuthenticateUserService';
 import Email from '../entities/user/value-objects/Email';
 import Password from '../entities/user/value-objects/Password';
-import ValidationError from '../errors/ValidationError';
+import RequiredFieldNotProvidedError from './errors/RequiredFieldNotProvidedError';
 import { ok } from './util/httpControllerResponses';
 
 export default class AuthenticateUserController implements IController {
@@ -25,6 +25,6 @@ export default class AuthenticateUserController implements IController {
     const hasEmail = !!payload.email;
     const hasPassword = !!payload.password;
 
-    if (!hasEmail || !hasPassword) throw new ValidationError('All fields must be filled');
+    if (!hasEmail || !hasPassword) throw new RequiredFieldNotProvidedError();
   }
 }
