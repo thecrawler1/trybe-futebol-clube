@@ -2,10 +2,10 @@ import * as chai from 'chai';
 import * as chaiAsPromised from 'chai-as-promised';
 import { StatusCodes } from 'http-status-codes';
 
-import IAuthenticateUserService from '../../../services/interfaces/IAuthenticateUserService';
-import AuthenticateUserController from '../../../controllers/AuthenticateUserController';
-import IRequest from '../../../controllers/interfaces/IRequest';
-import ValidationError from '../../../errors/ValidationError';
+import IAuthenticateUserService from '../services/interfaces/IAuthenticateUserService';
+import AuthenticateUserController from '../controllers/AuthenticateUserController';
+import IRequest from '../controllers/interfaces/IRequest';
+import ValidationError from '../errors/ValidationError';
 
 chai.use(chaiAsPromised);
 

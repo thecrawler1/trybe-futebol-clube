@@ -1,13 +1,13 @@
 import { expect } from 'chai';
 
-import User from '../../../entities/user/User';
-import UserDTO from '../../../entities/user/dtos/UserDTO';
-import { RoleType } from '../../../entities/user/value-objects/Role';
-import InvalidIdError from '../../../entities/shared/errors/InvalidIdError';
-import InvalidUsernameError from '../../../entities/user/errors/InvalidUsernameError';
-import InvalidRoleError from '../../../entities/user/errors/InvalidRoleError';
-import InvalidEmailError from '../../../entities/user/errors/InvalidEmailError';
-import InvalidPasswordError from '../../../entities/user/errors/InvalidPasswordError';
+import User from '../entities/user/User';
+import UserDTO from '../entities/user/dtos/UserDTO';
+import { RoleType } from '../entities/user/value-objects/Role';
+import InvalidIdError from '../entities/shared/errors/InvalidIdError';
+import InvalidUsernameError from '../entities/user/errors/InvalidUsernameError';
+import InvalidRoleError from '../entities/user/errors/InvalidRoleError';
+import InvalidEmailError from '../entities/user/errors/InvalidEmailError';
+import InvalidPasswordError from '../entities/user/errors/InvalidPasswordError';
 
 describe('User entity', function () {
   const validUserDTO: UserDTO = {

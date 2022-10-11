@@ -1,12 +1,12 @@
 import * as chai from 'chai';
 import * as chaiAsPromised from 'chai-as-promised';
 
-import AuthenticateUserService from '../../../services/AuthenticateUserService';
-import IGetUserByEmailRepository from '../../../services/interfaces/IGetUserByEmailRepository';
-import IHashComparer from '../../../services/interfaces/IHashComparer';
-import User from '../../../entities/user/User';
-import IncorrectEmailOrPasswordError from '../../../services/errors/IncorrectEmailOrPasswordError';
-import { generateToken } from '../../../services/utils/token';
+import AuthenticateUserService from '../services/AuthenticateUserService';
+import IGetUserByEmailRepository from '../services/interfaces/IGetUserByEmailRepository';
+import IHashComparer from '../services/interfaces/IHashComparer';
+import User from '../entities/user/User';
+import IncorrectEmailOrPasswordError from '../services/errors/IncorrectEmailOrPasswordError';
+import { generateToken } from '../services/utils/token';
 
 chai.use(chaiAsPromised);
 
