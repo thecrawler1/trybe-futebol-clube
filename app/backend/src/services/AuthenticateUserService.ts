@@ -5,7 +5,7 @@ import Email from '../entities/user/value-objects/Email';
 import Password from '../entities/user/value-objects/Password';
 import User from '../entities/user/User';
 import IncorrectEmailOrPasswordError from './errors/IncorrectEmailOrPasswordError';
-import { generateToken } from './utils/token';
+import { generateToken } from '../utils/token';
 
 export default class AuthenticateUserService implements IAuthenticateUserService {
   constructor(

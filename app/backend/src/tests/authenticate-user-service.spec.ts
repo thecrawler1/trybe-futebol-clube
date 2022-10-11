@@ -6,7 +6,7 @@ import IGetUserByEmailRepository from '../services/interfaces/IGetUserByEmailRep
 import IHashComparer from '../services/interfaces/IHashComparer';
 import User from '../entities/user/User';
 import IncorrectEmailOrPasswordError from '../services/errors/IncorrectEmailOrPasswordError';
-import { generateToken } from '../services/utils/token';
+import { generateToken } from '../utils/token';
 
 chai.use(chaiAsPromised);
 
