@@ -10,6 +10,7 @@ export function generateToken(user: User): string {
   const userDTO: UserDTO = user.toUserDTO();
 
   delete userDTO.password;
+  delete userDTO.passwordHash;
 
   return sign(userDTO, SECRET);
 }
