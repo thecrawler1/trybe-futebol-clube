@@ -18,7 +18,7 @@ Match.init({
     primaryKey: true,
     type: DataTypes.INTEGER,
   },
-  home_team: {
+  homeTeam: {
     allowNull: false,
     type: DataTypes.INTEGER,
     references: {
@@ -26,11 +26,11 @@ Match.init({
       key: 'id',
     },
   },
-  home_team_goals: {
+  homeTeamGoals: {
     allowNull: false,
     type: DataTypes.INTEGER,
   },
-  away_team: {
+  awayTeam: {
     allowNull: false,
     type: DataTypes.INTEGER,
     references: {
@@ -38,11 +38,11 @@ Match.init({
       key: 'id',
     },
   },
-  away_team_goals: {
+  awayTeamGoals: {
     allowNull: false,
     type: DataTypes.INTEGER,
   },
-  in_progress: {
+  inProgress: {
     allowNull: false,
     type: DataTypes.BOOLEAN,
   },
@@ -53,10 +53,10 @@ Match.init({
   timestamps: false,
 });
 
-Team.belongsTo(Match, { foreignKey: 'homeTeam', as: 'homeTeam'});
-Team.belongsTo(Match, { foreignKey: 'awayTeam', as: 'awayTeam'});
+Team.belongsTo(Match, { foreignKey: 'homeTeam', as: 'homeTeam' });
+Team.belongsTo(Match, { foreignKey: 'awayTeam', as: 'awayTeam' });
 
-Match.hasMany(Team, { foreignKey: 'homeTeam', as: 'homeTeam'});
-Match.hasMany(Team, { foreignKey: 'awayTeam', as: 'awayTeam'});
+Match.hasMany(Team, { foreignKey: 'homeTeam', as: 'homeTeam' });
+Match.hasMany(Team, { foreignKey: 'awayTeam', as: 'awayTeam' });
 
 export default Match;
