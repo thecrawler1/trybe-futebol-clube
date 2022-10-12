@@ -1,4 +1,4 @@
-import InvalidTeamNameError from "../errors/InvalidTeamNameError";
+import InvalidTeamNameError from '../errors/InvalidTeamNameError';
 
 export default class TeamName {
   private static minLength = 4;
