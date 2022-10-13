@@ -34,14 +34,17 @@ export default class User {
   }
 
   toUserDTO(): UserDTO {
-    return {
-      id: this.id?.value,
+    const dto: UserDTO = {
       email: this.email.value,
-      password: this.password?.value,
       username: this.username.value,
       role: this.role.value,
       passwordHash: this.passwordHash,
     };
+
+    if (this.id) dto.id = this.id.value;
+    if (this.password) dto.password = this.password.value;
+
+    return dto;
   }
 
   get email(): Email {

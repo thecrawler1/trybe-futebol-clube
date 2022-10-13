@@ -19,10 +19,11 @@ export default class Team {
   }
 
   toTeamDTO(): TeamDTO {
-    return {
-      id: this.id?.value,
-      teamName: this.teamName.value,
-    };
+    const dto: TeamDTO = { teamName: this.teamName.value };
+
+    if (this.id) dto.id = this.id.value;
+
+    return dto;
   }
 
   get teamName(): TeamName {
