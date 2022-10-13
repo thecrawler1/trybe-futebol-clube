@@ -10,7 +10,7 @@ export default class Id {
   }
 
   private static validate(id: number): void {
-    if (id < 0) throw new InvalidIdError();
+    if (typeof id !== 'number' || Number.isNaN(id) || id < 0) throw new InvalidIdError();
   }
 
   get value(): number {

@@ -13,9 +13,14 @@ export default class Username {
   }
 
   private static validate(username: string): void {
+    this.validateIfIsString(username);
     this.validateIfIsEmpty(username);
     this.validateLength(username);
     this.validateIfHasWhiteSpaces(username);
+  }
+
+  private static validateIfIsString(username: string): void {
+    if (typeof username !== 'string') throw new InvalidUsernameError();
   }
 
   private static validateIfIsEmpty(username: string): void {

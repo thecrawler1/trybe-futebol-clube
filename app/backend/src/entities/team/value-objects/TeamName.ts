@@ -13,14 +13,17 @@ export default class TeamName {
   }
 
   private static validate(teamName: string): void {
+    this.validateIfIsString(teamName);
     this.validateIfIsEmpty(teamName);
     this.validateLength(teamName);
   }
 
+  private static validateIfIsString(teamName: string): void {
+    if (typeof teamName !== 'string') throw new InvalidTeamNameError();
+  }
+
   private static validateIfIsEmpty(teamName: string): void {
-    if (teamName === '') {
-      throw new InvalidTeamNameError('The team name is empty');
-    }
+    if (teamName === '') throw new InvalidTeamNameError('The team name is empty');
   }
 
   private static validateLength(teamName: string): void {

@@ -16,8 +16,13 @@ export default class Email {
   }
 
   private static validate(email: string): void {
+    this.validateIfIsString(email);
     this.validateIfIsEmpty(email);
     this.validateFormat(email);
+  }
+
+  private static validateIfIsString(email: string): void {
+    if (typeof email !== 'string') throw new InvalidEmailError();
   }
 
   private static validateIfIsEmpty(email: string): void {

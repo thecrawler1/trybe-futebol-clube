@@ -13,8 +13,13 @@ export default class Password {
   }
 
   static validate(password: string): void {
+    this.validateIfIsString(password);
     this.validateLength(password);
     this.validateIfHasWhiteSpaces(password);
+  }
+
+  private static validateIfIsString(password: string): void {
+    if (typeof password !== 'string') throw new InvalidPasswordError();
   }
 
   private static validateLength(password: string): void {
