@@ -1,0 +1,6 @@
+import Team from '../../entities/team/Team';
+import Id from '../../entities/shared/value-objects/Id';
+
+export default interface IGetTeamByIdRepository {
+  perform(id: Id): Promise<Team | null>;
+}
