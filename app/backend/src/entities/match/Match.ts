@@ -75,7 +75,7 @@ export default class Match {
 
   get homeTeamGoals(): TeamGoals {
     return this._homeTeamGoals;
-  } 
+  }
 
   get awayTeamId(): Id {
     return this._awayTeamId;
