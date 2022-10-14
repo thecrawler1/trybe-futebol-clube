@@ -13,6 +13,10 @@ export default class Id {
     if (typeof id !== 'number' || Number.isNaN(id) || id < 0) throw new InvalidIdError();
   }
 
+  equals(id: Id): boolean {
+    return this.value === id.value;
+  }
+
   get value(): number {
     return this._value;
   }
