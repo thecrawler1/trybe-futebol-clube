@@ -22,8 +22,8 @@ export default class AuthenticateUserController implements IController {
 
   private static validateRequiredFields(request: IRequest): void {
     const { email, password } = request.payload;
-    const hasEmail = email !== undefined;
-    const hasPassword = password !== undefined;
+    const hasEmail = !!email;
+    const hasPassword = !!password;
 
     if (!hasEmail || !hasPassword) throw new RequiredFieldNotProvidedError();
   }
