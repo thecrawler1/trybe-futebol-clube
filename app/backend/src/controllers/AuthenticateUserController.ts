@@ -11,7 +11,7 @@ export default class AuthenticateUserController implements IController {
   constructor(private authenticateUser: IAuthenticateUserService) {}
 
   async handle(request: IRequest): Promise<IResponse> {
-    AuthenticateUserController.validateIfEmailAndPasswordWereProvided(request);
+    AuthenticateUserController.validateRequiredFields(request);
 
     const email = Email.create(request.payload.email);
     const password = Password.create(request.payload.password);
@@ -20,10 +20,10 @@ export default class AuthenticateUserController implements IController {
     return ok({ token });
   }
 
-  private static validateIfEmailAndPasswordWereProvided(request: IRequest): void {
-    const { payload } = request;
-    const hasEmail = !!payload.email;
-    const hasPassword = !!payload.password;
+  private static validateRequiredFields(request: IRequest): void {
+    const { email, password } = request.payload;
+    const hasEmail = email !== undefined;
+    const hasPassword = password !== undefined;
 
     if (!hasEmail || !hasPassword) throw new RequiredFieldNotProvidedError();
   }
