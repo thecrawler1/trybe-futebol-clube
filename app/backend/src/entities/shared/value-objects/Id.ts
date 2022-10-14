@@ -1,7 +1,7 @@
 import InvalidIdError from '../errors/InvalidIdError';
 
 export default class Id {
-  constructor(private readonly _value: number) {}
+  private constructor(private readonly _value: number) {}
 
   static create(id: number): Id {
     this.validate(id);
