@@ -77,12 +77,20 @@ export default class Match {
     return this._homeTeamGoals;
   }
 
+  set homeTeamGoals(goals: TeamGoals) {
+    this._homeTeamGoals = goals;
+  }
+
   get awayTeamId(): Id {
     return this._awayTeamId;
   }
 
   get awayTeamGoals(): TeamGoals {
     return this._awayTeamGoals;
+  }
+
+  set awayTeamGoals(goals: TeamGoals) {
+    this._awayTeamGoals = goals;
   }
 
   get inProgress(): boolean {

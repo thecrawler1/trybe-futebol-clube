@@ -1,11 +1,10 @@
+import MatchGoalsDTO from './MatchGoalsDTO';
 import TeamDTO from '../../team/dtos/TeamDTO';
 
-export default class Matchdto {
+export default class Matchdto extends MatchGoalsDTO {
   id?: number;
   homeTeam: number;
-  homeTeamGoals: number;
   awayTeam: number;
-  awayTeamGoals: number;
   inProgress: boolean;
   teamHome?: TeamDTO;
   teamAway?: TeamDTO;
