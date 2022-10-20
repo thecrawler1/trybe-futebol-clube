@@ -6,6 +6,7 @@ import MatchGoalsDTO from '../entities/match/dtos/MatchGoalsDTO';
 import Match from '../entities/match/Match';
 import TeamGoals from '../entities/match/value-objects/TeamGoals';
 import MatchNotFoundError from './errors/MatchNotFoundError';
+import MatchNotInProgressError from './errors/MatchNotInProgressError';
 
 export default class UpdateMatchGoalsService implements IUpdateMatchGoalsService {
   constructor(
@@ -14,9 +15,10 @@ export default class UpdateMatchGoalsService implements IUpdateMatchGoalsService
   ) {}
 
   async perform(matchId: Id, matchGoals: MatchGoalsDTO): Promise<{ message: string }> {
-    const match: Match | null = await this.getMatchByIdRepository.perform(matchId);;
+    const match: Match | null = await this.getMatchByIdRepository.perform(matchId);
 
     if (!match) throw new MatchNotFoundError();
+    if (!match.inProgress) throw new MatchNotInProgressError();
 
     match.homeTeamGoals = TeamGoals.create(matchGoals.homeTeamGoals);
     match.awayTeamGoals = TeamGoals.create(matchGoals.awayTeamGoals);
